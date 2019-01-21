@@ -29,9 +29,10 @@ app.use((req, res, next) => {               // next is used to tell when your mi
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-});
+// Maintenance page
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs');
+// });
 
 app.use(express.static(__dirname + '/public'))
 // Helpers allow you to run some code from .hbs (html) files
