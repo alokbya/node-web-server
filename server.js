@@ -64,6 +64,14 @@ app.get('/', (req, res) => {
   });
 });
 
+// Projects page
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'projects Page',
+    pageName: 'Projects'
+  });                                  // static page rendering (render tied to view engine)
+});
+
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
