@@ -1,3 +1,6 @@
 node_modules/
 server.log
 package-lock.json
+server.key
+server.pass.key
+server.csr
