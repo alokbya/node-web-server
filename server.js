@@ -34,7 +34,7 @@ app.use((req, res, next) => {               // next is used to tell when your mi
 //   res.render('maintenance.hbs');
 // });
 
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(__dirname + '/public'));
 // Helpers allow you to run some code from .hbs (html) files
 // Use a helper to get date (year) for footer.hbs
 hbs.registerHelper('getCurrentYear', () => {
@@ -77,6 +77,13 @@ app.get('/about', (req, res) => {
     pageTitle: 'About Page',
     pageName: 'About us'
   });                                  // static page rendering (render tied to view engine)
+});
+
+app.get('/notes', (req, res) => {
+  res.render('notes.hbs', {
+    pageTitle: 'Notes',
+    pageName: 'Notes'
+  })
 });
 
 app.get('/bad', (req, res) => {
