@@ -4,3 +4,4 @@ package-lock.json
 server.key
 server.pass.key
 server.csr
+.env

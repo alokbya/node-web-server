@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
-const fs = require('fs');              // Going to write middleware output to file
+const fs = require('fs'); // Going to write middleware output to file
+// const weather = require('./weather.js'); // link up to the weather.js file
 
 // port for app (Heroku)
 const port = process.env.PORT || 3000;
@@ -10,20 +11,20 @@ let app = express();
 
 
 // We want to add support for partials:
-hbs.registerPartials(__dirname + '/views/partials/')    // __dirname stores path to proj. directory
+hbs.registerPartials(__dirname + '/views/partials/') // __dirname stores path to proj. directory
 // lets you set various express related configurations
 app.set('view engine', 'hbs');
 
 // app.use is how you register middleware
 // Middleware to track how the server is working
 
-app.use((req, res, next) => {               // next is used to tell when your middleware function is done
+app.use((req, res, next) => { // next is used to tell when your middleware function is done
   let now = new Date().toString();
   let log = `${now}: ${req.method} ${req.url}`
   console.log(log);
   fs.appendFile('server.log', log + '\n', (err) => {
-    if(err){
-    console.log('Unable to write to server.log!');
+    if (err) {
+      console.log('Unable to write to server.log!');
     }
   })
   next();
@@ -52,7 +53,7 @@ hbs.registerHelper('screamIt', (text) => {
 // res: response
 app.get('/', (req, res) => {
   //res.send('Hello Express');
-  res.render('home.hbs',{
+  res.render('home.hbs', {
     name: 'Alaaddin',
     height: '250',
     likes: [
@@ -69,14 +70,14 @@ app.get('/projects', (req, res) => {
   res.render('projects.hbs', {
     pageTitle: 'projects Page',
     pageName: 'Projects'
-  });                                  // static page rendering (render tied to view engine)
-}); 
+  }); // static page rendering (render tied to view engine)
+});
 
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
     pageName: 'About us'
-  });                                  // static page rendering (render tied to view engine)
+  }); // static page rendering (render tied to view engine)
 });
 
 app.get('/notes', (req, res) => {
