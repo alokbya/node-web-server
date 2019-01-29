@@ -30,6 +30,17 @@ font-family: 'Pacifico', cursive; */
     display: inline-block;
     width: auto;
 }
+
+#tweet:hover {
+  color: #38A1F3;
+}
+#busi:hover {
+  color: #0077B5;
+}
+#git:hover {
+  color: #6e5494;
+}
+
 .nav-title {
     /* padding-left: 5%; */
     display: inline-block;
@@ -54,12 +65,12 @@ font-family: 'Pacifico', cursive; */
 }
 
 #PageName {
-    
+
 }
 
 
 .side-nav {
-    
+
 }
 
 
@@ -78,6 +89,3 @@ footer {
 #footer {
     color: whitesmoke;
 }
-
-
-
