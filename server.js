@@ -70,7 +70,7 @@ app.get('/projects', (req, res) => {
     pageTitle: 'projects Page',
     pageName: 'Projects'
   });                                  // static page rendering (render tied to view engine)
-});
+}); 
 
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
